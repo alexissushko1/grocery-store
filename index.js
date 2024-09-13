@@ -14,7 +14,10 @@
  * @param {Item[]} items - array of items
  */
 function logNames(items) {
-  // TODO: use `forEach`
+  items.forEach((item, index) => {
+    console.log(item.name)
+  });
+
 }
 
 /**
@@ -22,7 +25,11 @@ function logNames(items) {
  * @returns {string[]} an array of item names in all uppercase
  */
 function getUppercaseNames(items) {
-  // TODO: use `map`
+  for(const item of items) {
+    const upper = item.name;
+    const upperCase = upper.toUpperCase();
+    console.log(upperCase);
+  }
 }
 
 /**
@@ -31,8 +38,16 @@ function getUppercaseNames(items) {
  * @returns {Item} - the item in `items` with the given `id`
  */
 function getItemById(items, id) {
-  // TODO: use `find`
-}
+  for(const item of items) {
+    const itemOfId = item.id;
+    console.log(itemOfId);
+    while(itemOfId) {
+      items.find((id) => {
+      return id === itemId;
+    })
+    }
+  }
+  }
 
 /**
  * @param {Item[]} items - array of items
@@ -40,7 +55,7 @@ function getItemById(items, id) {
  * @returns {number} the price of the item named `name`
  */
 function getItemPriceByName(items, name) {
-  // TODO: use a loop!
+  
 }
 
 /**
