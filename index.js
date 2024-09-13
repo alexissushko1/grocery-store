@@ -50,8 +50,11 @@ function getItemById(items, id) {
  * @returns {number} the price of the item named `name`
  */
 function getItemPriceByName(items, name) {
+ for (const item of items) {
+return item.price;
 
 }
+ }
 
 /**
  * @param {Item[]} items - array of items
@@ -59,7 +62,7 @@ function getItemPriceByName(items, name) {
  * @returns {Item[]} array of items that belong to the given `category`
  */
 function getItemsByCategory(items, category) {
-  // TODO: use `filter`
+  const result = items.filter(item => category);
 }
 
 /**
@@ -67,7 +70,11 @@ function getItemsByCategory(items, category) {
  * @returns {number} the total quantity of all items
  */
 function countItems(items) {
-  // TODO: use `reduce`
+  const item = 0;
+  const countItems = items.reduce (
+    (accumulator, currentValue) => accumulator + currentValue,
+    item);
+  console.log(countItems);
 }
 
 /**
@@ -75,7 +82,12 @@ function countItems(items) {
  * @returns {number} the cost of all given items
  */
 function calculateTotalPrice(items) {
-  // TODO: use `reduce`
+  const item = 0;
+  const sumOfItems = items.reduce (
+    (accumulator, currentValue) => accumulator + currentValue,
+    initialValue
+  );
+  console.log(countItems);
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
