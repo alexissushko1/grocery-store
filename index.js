@@ -38,15 +38,9 @@ function getUppercaseNames(items) {
  * @returns {Item} - the item in `items` with the given `id`
  */
 function getItemById(items, id) {
-  for(const item of items) {
-    const itemOfId = item.id;
-    console.log(itemOfId);
-    while(itemOfId) {
-      items.find((id) => {
-      return id === itemId;
-    })
-    }
-  }
+const foundItem = INVENTORY.find((itemId)=> {
+  return itemId = id;
+})
   }
 
 /**
@@ -55,7 +49,12 @@ function getItemById(items, id) {
  * @returns {number} the price of the item named `name`
  */
 function getItemPriceByName(items, name) {
-  
+  for (const item of items){
+    const nameOfItem = item.name;
+    const priceOfItem = item.price;
+    console.log(nameOfItem);
+    console.log(priceOfItem);
+  }
 }
 
 /**
