@@ -76,7 +76,21 @@ if (itemName === "apple") {
  * @returns {Item[]} array of items that belong to the given `category`
  */
 function getItemsByCategory(items, category) {
-  const result = items.filter(item => category);
+  for (const item of items) {
+    if(category === "fruit") {
+  const fruit = items.filter(item => item.category === "fruit");
+  return fruit
+} else if (category === "vegetable") {
+  const vegetable = items.filter(item => item.category === "vegetable");
+  return vegetable
+} else if (category === "dairy") {
+  const dairy = items.filter(item => item.category === "dairy");
+  return dairy
+}else if (category === "grains") {
+  const grains = items.filter(item => item.category === "grains");
+  return grains
+}
+}
 }
 
 /**
