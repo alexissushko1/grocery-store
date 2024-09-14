@@ -14,22 +14,15 @@
  * @param {Item[]} items - array of items
  */
 function logNames(items) {
-  items.forEach((item, index) => {
-    console.log(item.name)
-  });
-
-}
+items.forEach((item) => console.log(item.name));
+  }
 
 /**
  * @param {Item[]} items - array of items
  * @returns {string[]} an array of item names in all uppercase
  */
 function getUppercaseNames(items) {
-  for(const item of items) {
-    const upper = item.name;
-    const upperCase = upper.toUpperCase();
-    console.log(upperCase);
-  }
+    return items.map((item) => item.name.toUpperCase());
 }
 
 /**
@@ -38,10 +31,7 @@ function getUppercaseNames(items) {
  * @returns {Item} - the item in `items` with the given `id`
  */
 function getItemById(items, id) {
-    const foundItem = items.find (item => {
-     item.id === itemId;
-    });
-    console.log(itemId);
+return items.find((item) => item.id === id);
 }
 
 /**
@@ -52,22 +42,11 @@ function getItemById(items, id) {
 
 function getItemPriceByName(items, name) {
  for (const item of items) {
-if (itemName === "apple") {
-  return 1.75;
-} else if (itemName === "banana") {
-  return 0.25;
-} else if (itemName === "orange") {
-  return 1.0;
-} else if (itemName === "broccoli") {
-  return 3.0;
-} else if (itemName === "milk") {
-  return 5.75;
-} else if (itemName === "cheddar") {
-  return 4.0;
-} else if (itemName === "sourdough") {
-  return 5.5;
+if (item.name === name) {
+  return item.price;
 }
 }
+return undefined;
  }
 
 /**
@@ -76,21 +55,7 @@ if (itemName === "apple") {
  * @returns {Item[]} array of items that belong to the given `category`
  */
 function getItemsByCategory(items, category) {
-  for (const item of items) {
-    if(category === "fruit") {
-  const fruit = items.filter(item => item.category === "fruit");
-  return fruit
-} else if (category === "vegetable") {
-  const vegetable = items.filter(item => item.category === "vegetable");
-  return vegetable
-} else if (category === "dairy") {
-  const dairy = items.filter(item => item.category === "dairy");
-  return dairy
-}else if (category === "grains") {
-  const grains = items.filter(item => item.category === "grains");
-  return grains
-}
-}
+ return items.filter((item) => item.category === category);
 }
 
 /**
@@ -98,11 +63,8 @@ function getItemsByCategory(items, category) {
  * @returns {number} the total quantity of all items
  */
 function countItems(items) {
-  const item = 0;
-  const countItems = items.reduce (
-    (accumulator, item) => accumulator + item,
-    0);
-  console.log(countItems);
+  return items.reduce((count, item)=>
+  count += item.quantity, 0)
 }
 
 /**
@@ -110,9 +72,8 @@ function countItems(items) {
  * @returns {number} the cost of all given items
  */
 function calculateTotalPrice(items) {
-  const sumOfItems = items.reduce (
-    (accumulator, item) => accumulator + item,
-    0
+  return items.reduce((totalPrice, item) =>
+  totalPrice += item.quantify * item.price, 0
   );
 }
 
